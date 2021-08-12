@@ -1,0 +1,17 @@
+<h4 class="text-center">Login</h4>
+
+<form class="form mt-4 d-grid" (ngSubmit)="login()" #loginForm="ngForm">
+  <div class="form-group">
+    <input #userField="ngModel" required [(ngModel)]="username" name="username" class="form-control" type="text" placeholder="Nome de usuário">
+  </div>
+
+  <app-message *ngIf="userField.invalid && userField.touched" message="usuario inválido"></app-message>
+
+  <div class="form-group">
+    <input #passwordField="ngModel" required [(ngModel)]="password" name="password" class="form-control mt-2" type="password" placeholder="Senha">
+  </div>
+
+  <app-message *ngIf="passwordField.invalid && passwordField.touched" message="usuario inválido"></app-message>
+
+  <button class="btn btn-primary mt-2"type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
