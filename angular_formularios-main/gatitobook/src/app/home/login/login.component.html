@@ -13,5 +13,7 @@
 
   <app-message *ngIf="passwordField.invalid && passwordField.touched" message="usuario inválido"></app-message>
 
-  <button class="btn btn-primary mt-2"type="submit" [disabled]="loginForm.invalid">Login</button>
+  <button class="btn btn-primary mt-2" type="submit" [disabled]="loginForm.invalid">Login</button>
+
+  <p>Não é um usuário? <a [routerLink]="['new-user']" >Cadastre-se</a></p>
 </form>

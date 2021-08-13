@@ -1,0 +1,24 @@
+<h4>Cadastro</h4>
+
+<form class="form mt-4 d-grid" [formGroup]="newUserForm" (ngSubmit)="userRegister()">
+  <div class="form-group">
+    <input formControlName="email" name="email" class="form-control" type="text" placeholder="E-mail">
+  </div>
+
+  <div class="form-group mt-2">
+    <input formControlName="fullName" name="fullname" class="form-control" type="text" placeholder="Nome completo">
+  </div>
+
+
+  <div class="form-group mt-2">
+    <input formControlName="userName" name="username" class="form-control" type="text" placeholder="Usuário">
+  </div>
+
+  <div class="form-group mt-2">
+    <input formControlName="password" name="password" class="form-control" type="text" placeholder="Senha">
+  </div>
+
+  <button class="btn btn-primary mt-2">Cadastrar</button>
+
+  <p>Já é um usuário? <a [routerLink]="['']" >Faça login</a></p>
+</form>
