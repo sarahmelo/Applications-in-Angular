@@ -11,7 +11,7 @@
     <input #passwordField="ngModel" required [(ngModel)]="password" name="password" class="form-control mt-2" type="password" placeholder="Senha">
   </div>
 
-  <app-message *ngIf="passwordField.invalid && passwordField.touched" message="usuario inválido"></app-message>
+  <app-message *ngIf="passwordField.invalid && passwordField.touched" message="senha inválida"></app-message>
 
   <button class="btn btn-primary mt-2" type="submit" [disabled]="loginForm.invalid">Login</button>
 

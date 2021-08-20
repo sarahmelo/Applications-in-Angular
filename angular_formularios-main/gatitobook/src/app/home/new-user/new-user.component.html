@@ -3,16 +3,47 @@
 <form class="form mt-4 d-grid" [formGroup]="newUserForm" (ngSubmit)="userRegister()">
   <div class="form-group">
     <input formControlName="email" name="email" class="form-control" type="text" placeholder="E-mail">
+    <app-message
+      message="E-mail obrigatório"
+      *ngIf="
+        newUserForm.get('email')?.errors?.required &&
+        newUserForm.get('email')?.touched"
+    ></app-message>
+
+    <app-message
+      message="E-mail inválido"
+      *ngIf="
+        newUserForm.get('email')?.errors?.email"
+    ></app-message>
   </div>
 
   <div class="form-group mt-2">
-    <input formControlName="fullName" name="fullname" class="form-control" type="text" placeholder="Nome completo">
-  </div>
+    <input formControlName="fullName" name="fullName" class="form-control" type="text" placeholder="Nome completo">
+      <app-message
+        message="Nome obrigatório"
+        *ngIf="
+          newUserForm.get('fullName')?.touched &&
+          newUserForm.get('fullName')?.errors"
+      ></app-message>
+    </div>
 
 
   <div class="form-group mt-2">
-    <input formControlName="userName" name="username" class="form-control" type="text" placeholder="Usuário">
+    <input formControlName="userName" name="userName" class="form-control" type="text" placeholder="Usuário">
+    <app-message
+      message="Usuário deve ser em minúsculo"
+      *ngIf="
+        newUserForm.get('userName')?.errors?.lowercase &&
+        newUserForm.get('userName')?.touched"
+      ></app-message>
+
+      <app-message
+      message="Usuário já existe"
+      *ngIf="newUserForm.get('userName')?.errors?.userExists"
+      ></app-message>
   </div>
+
+
 
   <div class="form-group mt-2">
     <input formControlName="password" name="password" class="form-control" type="text" placeholder="Senha">

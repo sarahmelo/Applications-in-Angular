@@ -12,4 +12,9 @@ export class NewUserService {
   registerNewUser(newuser: NewUser) {
     this.http.post('https:localhost:3000', newuser)
   }
+
+  verifyUserExistent(username: string) {
+    console.log(username)
+    return this.http.get(`http://localhost:3000/user/exists/${username}`)
+  }
 }
