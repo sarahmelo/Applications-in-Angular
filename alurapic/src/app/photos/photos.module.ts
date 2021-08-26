@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { CardModule } from "../shared/components/card/card.module";
 
 import { PhotoFormModule } from "./photo-form/photo-form.module";
 import { PhotoListModule } from "./photo-list/photo-list.module";

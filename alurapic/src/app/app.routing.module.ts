@@ -4,7 +4,7 @@ import { NotFoundComponent } from "./erros/not-found/not-found.component";
 
 import { PhotoFormComponent } from "./photos/photo-form/photo-form.component";
 import { PhotoListComponent } from "./photos/photo-list/photo-list.component";
-import { PhotoListResolve } from "./photos/photo-list/photolist-resolver";
+import { PhotoListResolve } from "./photos/photo-list/photolist.resolver";
 
 const routes: Routes = [
   {
